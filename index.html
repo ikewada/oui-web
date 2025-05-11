@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OUI - Digital Content Creation</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo-oui.svg" alt="OUI">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" class="tooltip">Works
+                        <span class="tooltiptext">Under Construction</span>
+                    </a>
+                </li>
+                <li class="lang-select">
+                    <button id="lang-dropdown-btn" class="lang-dropdown-btn" aria-label="言語選択">
+                        <img src="images/icon-language.svg" alt="Language" class="lang-icon" />
+                    </button>
+                    <ul id="lang-dropdown-list" class="lang-dropdown-list" tabindex="-1" role="listbox" aria-labelledby="lang-dropdown-btn">
+                        <li class="lang-option selected" data-lang="ja" role="option" aria-selected="true">日本語</li>
+                        <li class="lang-option" data-lang="en" role="option" aria-selected="false">English</li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="images/geometric-design.png" alt="Abstract geometric design" class="hero-image">
+        </section>
+
+        <section class="about" id="about">
+            <h2 data-i18n="about_title">About us</h2>
+            <div class="about-content">
+                <p data-i18n="about_1">OUI はデジタルコンテンツを作成する池和田有輔の1人ユニットです。</p>
+                <p data-i18n="about_2">ウェブ、アプリケーション、ゲームなど、さまざまなメディアのデザインに取り組んでいます。</p>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section class="profile" id="profile">
+            <h2 data-i18n="profile_title">Company Profile</h2>
+            <div class="profile-content">
+                <dl>
+                    <dt data-i18n="profile_company">商号</dt>
+                    <dd data-i18n="profile_company_val">Oui合同会社</dd>
+                    
+                    <dt data-i18n="profile_ceo">代表</dt>
+                    <dd data-i18n="profile_ceo_val">池和田 有輔</dd>
+                    
+                    <dt data-i18n="profile_address">住所</dt>
+                    <dd data-i18n="profile_address_val">東京都渋谷区道玄坂1-10-8 渋谷道玄坂東急ビル2F-C</dd>
+                    
+                    <dt data-i18n="profile_founded">創業</dt>
+                    <dd data-i18n="profile_founded_val">2025年5月</dd>
+                    
+                    <dt data-i18n="profile_capital">資本金</dt>
+                    <dd data-i18n="profile_capital_val">1,000,000円</dd>
+                </dl>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section class="contact" id="contact">
+            <h2 data-i18n="contact_title">Contact us</h2>
+            <div class="contact-content">
+                <p data-i18n="contact_desc">お問い合わせはこちらのフォームをご利用ください。</p>
+                
+                <form id="contactForm" action="https://formspree.io/f/mrbqaznl" method="POST">
+                    <div class="form-group">
+                        <label for="name" data-i18n="contact_label_name">お名前</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" data-i18n="contact_label_email">メールアドレス</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" data-i18n="contact_label_subject">件名</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" data-i18n="contact_label_message">メッセージ</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" id="contactSubmitBtn" data-i18n="contact_submit">送信</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <hr class="section-divider">
+        <footer class="footer-copyright">
+            © 2025 OUI LLC. All rights reserved.
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/node-polyglot/build/polyglot.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
