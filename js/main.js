@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const phrases = {
         ja: {
             about_title: "About us",
-            about_1: "OUI はデジタルコンテンツを作成する池和田有輔の1人ユニットです。",
-            about_2: "ウェブ、アプリケーション、ゲームなど、さまざまなメディアのデザインに取り組んでいます。",
+            about_1: "OUIは優れたデザインと表現力、そして柔軟な技術を駆使したデジタルコンテンツ制作を行っています。",
+            about_2: "ウェブ、アプリケーション、ゲームなど、さまざまなプラットフォームのデザインに取り組んでいます。",
             profile_title: "Company Profile",
             profile_company: "商号",
             profile_company_val: "Oui合同会社",
@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
             profile_ceo_val: "池和田 有輔",
             profile_address: "住所",
             profile_address_val: "東京都渋谷区道玄坂1-10-8 渋谷道玄坂東急ビル2F-C",
-            profile_founded: "創業",
-            profile_founded_val: "2025年5月",
+            profile_founded: "設立",
+            profile_founded_val: "2025年4月",
             profile_capital: "資本金",
             profile_capital_val: "1,000,000円",
             contact_title: "Contact us",
@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         en: {
             about_title: "About us",
-            about_1: "OUI is a one-person unit by Yusuke Ikewada for digital content creation.",
-            about_2: "We design for a variety of media, including web, applications, and games.",
+            about_1: "OUI creates digital content by combining outstanding design, expressive creativity, and flexible technology.",
+            about_2: "We work on design for a wide range of platforms, including websites, applications, and games.",
             profile_title: "Company Profile",
             profile_company: "Company",
             profile_company_val: "Oui LLC",
