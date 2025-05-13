@@ -2,13 +2,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert(polyglot.t('contact_alert'));
-            contactForm.reset();
-        });
-    }
+    // フォーム送信時のカスタム処理を削除し、デフォルト動作（FormspreeへのPOST）を有効化
+    // if (contactForm) {
+    //     contactForm.addEventListener('submit', function(e) {
+    //         e.preventDefault();
+    //         alert(polyglot.t('contact_alert'));
+    //         contactForm.reset();
+    //     });
+    // }
     
     // 言語選択ドロップダウン
     const langBtn = document.getElementById('lang-dropdown-btn');
