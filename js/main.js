@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const phrases = {
         ja: {
             about_title: "About us",
-            about_1: "OUIは優れたデザインと表現力、そして柔軟な技術を駆使したデジタルコンテンツ制作を行っています。",
-            about_2: "ウェブ、アプリケーション、ゲームなど、さまざまなプラットフォームのデザインに取り組んでいます。",
+            about_1: "OUIはゲーム開発を軸に、ウェブ、アプリケーションなど、さまざまなプラットフォームのコンテンツ作成に取り組んでいます。",
+            about_2: "デザイン力と表現力、そして多様な技術への対応を強みとし、テクノロジーの変化の波を楽しみながら新しい表現の可能性を日々探求しています。",
             profile_title: "Company Profile",
             profile_company: "商号",
             profile_company_val: "Oui合同会社",
@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         en: {
             about_title: "About us",
-            about_1: "OUI creates digital content by combining outstanding design, expressive creativity, and flexible technology.",
-            about_2: "We work on design for a wide range of platforms, including websites, applications, and games.",
+            about_1: "OUI is primarily focused on game development, but also engages in content creation for various platforms such as web and applications.",
+            about_2: "Leveraging its strengths in design capabilities, expressive power, and adaptability to a wide range of technologies, OUI continuously explores new possibilities for expression every day, all while enthusiastically embracing the constant evolution of technology.",
             profile_title: "Company Profile",
             profile_company: "Company",
             profile_company_val: "Oui LLC",
