@@ -41,7 +41,7 @@
         <section class="about" id="about">
             <h2 data-i18n="about_title">About us</h2>
             <div class="about-content">
-                <p data-i18n="about_1">OUIはゲーム開発を軸に、ウェブ、アプリケーションなど、さまざまなプラットフォームのコンテンツ作成に取り組んでいます。</p>
+                <p data-i18n="about_1">Ouiはゲーム開発を軸に、ウェブ、アプリケーションなど、さまざまなプラットフォームのコンテンツ作成に取り組んでいます。</p>
                 <p data-i18n="about_2">デザイン力と表現力、そして多様な技術への対応を強みとし、テクノロジーの変化の波を楽しみながら新しい表現の可能性を日々探求しています。</p>
             </div>
         </section>
@@ -52,20 +52,20 @@
             <h2 data-i18n="profile_title">Company Profile</h2>
             <div class="profile-content">
                 <dl>
-                    <dt data-i18n="profile_company">商号</dt>
+                    <dt data-i18n="profile_company">法人名</dt>
                     <dd data-i18n="profile_company_val">Oui合同会社</dd>
                     
-                    <dt data-i18n="profile_ceo">代表</dt>
+                    <dt data-i18n="profile_ceo">代表者</dt>
                     <dd data-i18n="profile_ceo_val">池和田 有輔</dd>
-                    
-                    <dt data-i18n="profile_address">住所</dt>
-                    <dd data-i18n="profile_address_val">東京都渋谷区道玄坂1-10-8 渋谷道玄坂東急ビル2F-C</dd>
                     
                     <dt data-i18n="profile_founded">設立</dt>
                     <dd data-i18n="profile_founded_val">2025年4月</dd>
-                    
+
                     <dt data-i18n="profile_capital">資本金</dt>
                     <dd data-i18n="profile_capital_val">1,000,000円</dd>
+
+                    <dt data-i18n="profile_address">住所</dt>
+                    <dd data-i18n="profile_address_val">東京都渋谷区道玄坂1-10-8 渋谷道玄坂東急ビル2F-C</dd>
                 </dl>
             </div>
         </section>
@@ -75,7 +75,7 @@
         <section class="contact" id="contact">
             <h2 data-i18n="contact_title">Contact us</h2>
             <div class="contact-content">
-                <p data-i18n="contact_desc">お問い合わせはこちらのフォームをご利用ください。</p>
+                <p data-i18n="contact_desc">お問い合わせは下記フォームよりお願いします。</p>
                 
                 <form id="contactForm" action="https://formspree.io/f/mrbqaznl" method="POST">
                     <div class="form-group">
@@ -94,8 +94,15 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="message" data-i18n="contact_label_message">メッセージ</label>
+                        <label for="message" data-i18n="contact_label_message">お問い合わせ内容</label>
                         <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="privacy" name="privacy" required>
+                        <label for="privacy" class="checkbox-label" id="privacy-label">
+                            <span data-i18n="contact_privacy_agree">に同意する</span><a href="#" id="privacy-policy-link" data-i18n="contact_privacy_link">個人情報の取り扱い</a>
+                        </label>
                     </div>
                     
                     <div class="form-group">
@@ -109,6 +116,31 @@
             © 2025 OUI LLC. All rights reserved.
         </footer>
     </main>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-i18n="privacy_policy_title">個人情報保護方針</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p data-i18n="privacy_policy_intro">Oui合同会社は、個人情報の保護に十分配慮した事業活動を行ってまいります。<br>以下のとおり個人情報保護方針を定め、情報管理に関する社内体制の策定・実施・維持・改善を継続的に行い、関連法令および社内規程を遵守いたします。</p>
+                
+                <h4 data-i18n="privacy_section1_title">情報の収集目的、利用範囲および訂正・削除について</h4>
+                <p data-i18n="privacy_section1_content">当社は、お問い合わせフォームを通じてご提供いただいた個人情報を、お問い合わせ内容への適切な回答のためにのみ利用し、目的外の利用はいたしません。<br>また、お客様が個人情報の訂正や削除をご希望される場合には、ご本人であることを確認のうえ、合理的な範囲で情報の訂正、更新、または削除を行います。</p>
+                
+                <h4 data-i18n="privacy_section2_title">個人情報の第三者提供について</h4>
+                <p data-i18n="privacy_section2_content">当社は、あらかじめご本人の同意を得ることなく、個人情報を第三者に提供または開示することはありません。<br>ただし、業務の一部を外部に委託する場合には、個人情報の漏えいや再提供がないよう契約により義務づけ、適切な管理と監督を行います。<br>また、法令に基づく場合や、お客様または公衆の生命・財産など重大な利益を保護するために必要な場合は、この限りではありません。</p>
+                
+                <h4 data-i18n="privacy_section3_title">セキュリティ対策について</h4>
+                <p data-i18n="privacy_section3_content">当社は、お客様の個人情報について厳重なセキュリティ対策を講じ、情報の紛失、不正アクセス、誤用、改ざん等の防止に努めるとともに、システムの継続的な見直しと改善を行います。</p>
+                
+                <h4 data-i18n="privacy_section4_title">法令遵守および体制の継続的改善</h4>
+                <p data-i18n="privacy_section4_content">当社は、保有する個人情報に関して適用される法令および各種ガイドラインを遵守し、本方針の内容を適宜見直し、継続的な改善に努めてまいります。</p>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/node-polyglot/build/polyglot.min.js"></script>
 <script src="js/main.js"></script>
