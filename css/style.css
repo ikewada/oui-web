@@ -47,7 +47,6 @@ header {
     height: 80px;
     margin-top: 30px;
     margin-left: 50px;
-    background-color: #edecea;
 }
 
 nav ul {
@@ -169,7 +168,7 @@ nav ul li a {
 main {
     margin-left: var(--bg-width); /* 背景画像の幅分の余白 */
     margin-top: 120px; /* 固定ヘッダー分の上部余白 */
-    margin-right: 30px;
+    margin-right: 50px;
     padding-top: 40px;
     padding-left: 20px; /* 追加の余白 */
     min-height: 100vh;
@@ -214,16 +213,22 @@ section > div {
 /* Profile Section */
 dl {
     display: grid;
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 120px 1fr;
     grid-gap: 20px 10px;
+    align-items: start;
 }
 
 dt {
     font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 dd {
     margin-left: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Contact Form */
@@ -437,6 +442,10 @@ footer {
     #background-video {
         display: none;
     }
+
+    header {
+        background-color: #edecea;
+    }
     
     /* モバイル表示時は左余白をなくす */
     main {
@@ -446,10 +455,14 @@ footer {
     }
     
     dl {
-        grid-template-columns: 1fr;
+        grid-template-columns: 100px 1fr;
+        grid-gap: 15px 8px;
     }
     
     dt {
-        margin-top: 15px;
+        margin-top: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
