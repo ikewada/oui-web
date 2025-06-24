@@ -75,9 +75,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Polyglot.js 辞書
     const phrases = {
         ja: {
-            about_title: "About us",
-            about_1: "Ouiはゲーム開発を軸に、ウェブ、アプリケーションなど、さまざまなプラットフォームのコンテンツ作成に取り組んでいます。",
-            about_2: "デザイン力と表現力、そして多様な技術への対応を強みとし、テクノロジーの変化の波を楽しみながら新しい表現の可能性を日々探求しています。",
+            about_title: "About Oui",
+            about_1: "Unity社のアドボケートとして活動した8年間の経験を活かし、現在はゲーム開発を中心に多様なクリエイティブプロジェクトに取り組んでいます。",
+            about_2: "デザイン力と表現力に加え、幅広い技術への柔軟な対応力を強みとし、常に進化するテクノロジーの流れを楽しみながら、新たな表現の可能性を追求しています。",
             profile_title: "Company Profile",
             profile_company: "法人名",
             profile_company_val: "Oui合同会社",
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
             profile_capital: "資本金",
             profile_capital_val: "1,000,000円",
             contact_title: "Contact us",
-            contact_desc: "お問い合わせはこちらのフォームよりお願いします。",
+            contact_desc: "お仕事のご依頼やお問い合わせは下記フォームよりお願いします。",
             contact_label_name: "お名前",
             contact_label_email: "メールアドレス",
             contact_label_subject: "件名",
@@ -112,9 +112,9 @@ document.addEventListener('DOMContentLoaded', function() {
             privacy_section4_content: "当社は、保有する個人情報に関して適用される法令および各種ガイドラインを遵守し、本方針の内容を適宜見直し、継続的な改善に努めてまいります。"
         },
         en: {
-            about_title: "About us",
-            about_1: "Oui is primarily focused on game development, but also engages in content creation for various platforms such as web and applications.",
-            about_2: "Leveraging its strengths in design capabilities, expressive power, and adaptability to a wide range of technologies, OUI continuously explores new possibilities for expression every day, all while enthusiastically embracing the constant evolution of technology.",
+            about_title: "About Oui",
+            about_1: "With eight years of experience as a Unity Advocate, I now focus on game development as the core of my work, while engaging in a wide range of creative projects.",
+            about_2: "I bring strong skills in design and expression, along with the ability to adapt to diverse technologies. Embracing the ever-evolving landscape of technology, I continuously explore new possibilities for creative expression.",
             profile_title: "Company Profile",
             profile_company: "Company",
             profile_company_val: "Oui LLC",
