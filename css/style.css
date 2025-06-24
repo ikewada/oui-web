@@ -303,12 +303,17 @@ button[type="submit"]:hover {
 }
 
 /* Responsive */
+footer {
+    max-width: 1680px;
+    margin: 0 auto;
+}
+
 .footer-copyright {
     text-align: right;
-    color: #000;
     font-size: 14px;
-    margin-bottom: 30px;
     letter-spacing: 0.5px;
+    padding-right: 40px;
+    padding-bottom: 40px;
 }
 
 /* Modal Styles */
@@ -424,13 +429,6 @@ button[type="submit"]:hover {
     /* 大画面表示時は背景画像の幅を小さく */
     :root {
         --bg-width: 20vw;
-    }
-}
-
-@media (min-width: 2600px) {
-    /* 超大画面表示時は背景画像の幅を0に */
-    :root {
-        --bg-width: 0vw;
     }
 }
 
