@@ -232,7 +232,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    // スクロールによる動画コマ送り
+    // スクロールによる動画コマ送り（アニメーション付き）
+    let targetTime = 0;
+    let isAnimating = false;
+    let animationStartTime = 0;
+    let animationStartValue = 0;
+    const animationDuration = 1000; // 1秒
+
     function updateBackgroundVideo() {
         if (!backgroundVideo || videoDuration === 0) return;
         
@@ -240,9 +246,44 @@ document.addEventListener('DOMContentLoaded', function() {
         const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
         const scrollProgress = Math.min(scrollTop / scrollHeight, 1);
         
-        // スクロール進行度に応じて動画の再生位置を設定
-        const targetTime = scrollProgress * videoDuration;
-        backgroundVideo.currentTime = targetTime;
+        // 新しい目標時間を計算
+        const newTargetTime = scrollProgress * videoDuration;
+        
+        // 目標が変わった場合はアニメーション開始
+        if (Math.abs(newTargetTime - targetTime) > 0.01) {
+            targetTime = newTargetTime;
+            startVideoAnimation();
+        }
+    }
+
+    function startVideoAnimation() {
+        if (!isAnimating) {
+            isAnimating = true;
+            animationStartTime = performance.now();
+            animationStartValue = backgroundVideo.currentTime;
+            animateVideoTime();
+        }
+    }
+
+    function animateVideoTime() {
+        if (!isAnimating) return;
+        
+        const currentTime = performance.now();
+        const elapsed = currentTime - animationStartTime;
+        const progress = Math.min(elapsed / animationDuration, 1);
+        
+        // Easing function (ease-out)
+        const easedProgress = 1 - Math.pow(1 - progress, 3);
+        
+        // 現在値から目標値へのアニメーション
+        const currentVideoTime = animationStartValue + (targetTime - animationStartValue) * easedProgress;
+        backgroundVideo.currentTime = currentVideoTime;
+        
+        if (progress < 1) {
+            requestAnimationFrame(animateVideoTime);
+        } else {
+            isAnimating = false;
+        }
     }
 
     // スクロールイベントリスナーの追加（パフォーマンス最適化のためにスロットリング）
