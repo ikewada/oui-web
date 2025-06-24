@@ -1,3 +1,30 @@
+// 背景動画の制御
+let backgroundVideo = null;
+let videoDuration = 0;
+
+// 動画の初期化
+function initBackgroundVideo() {
+    backgroundVideo = document.getElementById('background-video');
+    
+    if (backgroundVideo) {
+        // 動画の準備ができたら初期設定
+        backgroundVideo.addEventListener('loadedmetadata', function() {
+            videoDuration = backgroundVideo.duration;
+            backgroundVideo.currentTime = 0; // 最初のフレームを表示
+        });
+        
+        // 動画の読み込み開始
+        backgroundVideo.load();
+    }
+}
+
+// DOM読み込み時に動画を初期化
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBackgroundVideo);
+} else {
+    initBackgroundVideo();
+}
+
 // Form submission handling
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
@@ -204,6 +231,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+
+    // スクロールによる動画コマ送り
+    function updateBackgroundVideo() {
+        if (!backgroundVideo || videoDuration === 0) return;
+        
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollProgress = Math.min(scrollTop / scrollHeight, 1);
+        
+        // スクロール進行度に応じて動画の再生位置を設定
+        const targetTime = scrollProgress * videoDuration;
+        backgroundVideo.currentTime = targetTime;
+    }
+
+    // スクロールイベントリスナーの追加（パフォーマンス最適化のためにスロットリング）
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+        scrollTimeout = setTimeout(updateBackgroundVideo, 16); // 60fps相当
+    });
+
+    // 初期動画設定（動画が読み込まれた後に呼び出し）
+    if (backgroundVideo && backgroundVideo.readyState >= 1) {
+        updateBackgroundVideo();
+    } else if (backgroundVideo) {
+        backgroundVideo.addEventListener('loadedmetadata', updateBackgroundVideo);
+    }
 
     // Additional JavaScript functionality can be added here
 });

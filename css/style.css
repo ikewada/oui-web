@@ -15,38 +15,53 @@ body {
     letter-spacing: 0.05em;
     color: #333;
     background-color: #edecea;
-    background-image: url('../images/background/Background00000000.jpg');
-    background-repeat: no-repeat;
-    background-position: left top;
-    background-attachment: fixed;
-    background-size: auto 100vh;
+}
+
+/* 背景動画 */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: auto;
+    z-index: -1;
+    object-fit: cover;
+    object-position: left top;
 }
 
 /* Header */
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+    align-items: top;
     max-width: 1680px;
     margin: 0 auto;
+    z-index: 1000;
 }
 
 .logo img {
     height: 80px;
     margin-top: 30px;
     margin-left: 50px;
+    background-color: #edecea;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     align-items: center; /* WorksとアイコンのY座標を揃える */
+    background-color: #edecea;
+    padding: 30px;
 }
 
 nav ul li {
     position: relative;
-    margin-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 nav ul li a {
@@ -82,15 +97,15 @@ nav ul li a {
 .lang-dropdown-list {
     display: none;
     position: absolute;
-    top: 110%;
-    left: 0;
+    top: 120%;
+    left: -50px;
     min-width: 120px;
     background: #fff;
     border: 1px solid #CBD9D5;
     border-radius: 4px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     z-index: 30;
-    padding: 4px 0;
+    padding: 0;
     list-style: none;
 }
 .lang-dropdown-list.open {
@@ -153,6 +168,9 @@ nav ul li a {
 /* Main Content */
 main {
     margin-left: var(--bg-width); /* 背景画像の幅分の余白 */
+    margin-top: 120px; /* 固定ヘッダー分の上部余白 */
+    margin-right: 30px;
+    padding-top: 40px;
     padding-left: 20px; /* 追加の余白 */
     min-height: 100vh;
 }
@@ -165,16 +183,18 @@ section {
     flex-direction: column;
     gap: 20px;
     max-width: 1560px;
-    margin: 60px auto;
-    padding: 0 20px;
+    margin: 40px auto;
+    padding: 40px 0;
 }
 
 section h2 {
     width: 100%;
     min-width: 0;
     margin-bottom: 0;
-    font-size: 28px;
-    font-weight: normal;
+    font-size: 36px;
+    font-weight: 400;
+    font-family: 'Barlow', sans-serif;
+    color: #AB433A;
     text-align: left;
     display: flex;
     align-items: center;
@@ -238,7 +258,8 @@ button[type="submit"] {
     background-color: #d3866a;
     color: white;
     border: none;
-    padding: 10px 20px;
+    margin-top: 20px;
+    padding: 15px 20px;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
@@ -286,7 +307,7 @@ button[type="submit"]:hover {
     text-align: right;
     color: #000;
     font-size: 14px;
-    margin: 0 50px 30px 0;
+    margin-bottom: 30px;
     letter-spacing: 0.5px;
 }
 
@@ -399,14 +420,14 @@ button[type="submit"]:hover {
     }
 }
 
-@media (min-width: 2080px) {
+@media (min-width: 2200px) {
     /* 大画面表示時は背景画像の幅を小さく */
     :root {
         --bg-width: 20vw;
     }
 }
 
-@media (min-width: 2440px) {
+@media (min-width: 2600px) {
     /* 超大画面表示時は背景画像の幅を0に */
     :root {
         --bg-width: 0vw;
@@ -414,14 +435,15 @@ button[type="submit"]:hover {
 }
 
 @media (max-width: 768px) {
-    /* モバイル表示時は背景画像を非表示 */
-    body {
-        background-image: none;
+    /* モバイル表示時は背景動画を非表示 */
+    #background-video {
+        display: none;
     }
     
     /* モバイル表示時は左余白をなくす */
     main {
         margin-left: 0;
+        margin-top: 120px; /* 固定ヘッダー分の上部余白 */
         padding-left: 50px;
     }
     
