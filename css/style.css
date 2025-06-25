@@ -1,6 +1,6 @@
 /* Base Styles */
 :root {
-    --bg-width: 40vw; /* 背景画像の幅を画面幅の50%と仮定 */
+    --bg-width: 50vw; /* 背景画像の幅を画面幅の50%と仮定 */
 }
 
 * {
@@ -423,17 +423,24 @@ footer {
     }
 }
 
-@media (min-width: 1720px) {
+@media (min-width: 1600px) {
+    /* 大画面表示時は背景画像の幅を小さく */
+    :root {
+        --bg-width: 40vw;
+    }
+}
+
+@media (min-width: 2100px) {
     /* 大画面表示時は背景画像の幅を小さく */
     :root {
         --bg-width: 30vw;
     }
 }
 
-@media (min-width: 2200px) {
+@media (min-width: 2600px) {
     /* 大画面表示時は背景画像の幅を小さく */
     :root {
-        --bg-width: 20vw;
+        --bg-width: 15vw;
     }
 }
 
