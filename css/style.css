@@ -38,7 +38,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: top;
-    max-width: 1680px;
+    max-width: 1280px;
     margin: 0 auto;
     z-index: 1000;
 }
@@ -181,8 +181,8 @@ section {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 1560px;
-    margin: 40px auto;
+    max-width: 1280px;
+    margin: 20px auto;
     padding: 40px 0;
 }
 
@@ -204,7 +204,7 @@ section > div {
 }
 
 .about-content, .profile-content, .contact-content {
-    max-width: 800px;
+    max-width: 680px;
 }
 
 
@@ -309,7 +309,7 @@ button[type="submit"]:hover {
 
 /* Responsive */
 footer {
-    max-width: 1680px;
+    max-width: 1280px;
     margin: 0 auto;
 }
 
@@ -423,10 +423,17 @@ footer {
     }
 }
 
+@media (min-width: 1200px) {
+    /* 大画面表示時は背景画像の幅を小さく */
+    :root {
+        --bg-width: 45vw;
+    }
+}
+
 @media (min-width: 1600px) {
     /* 大画面表示時は背景画像の幅を小さく */
     :root {
-        --bg-width: 40vw;
+        --bg-width: 38vw;
     }
 }
 
@@ -440,7 +447,7 @@ footer {
 @media (min-width: 2600px) {
     /* 大画面表示時は背景画像の幅を小さく */
     :root {
-        --bg-width: 15vw;
+        --bg-width: 20vw;
     }
 }
 
