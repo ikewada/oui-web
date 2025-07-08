@@ -176,7 +176,7 @@ main {
 
 /* リンクの下線アニメーション */
 main a {
-    color: #bb6057;
+    color: #3F81A6;
     text-decoration: none;
     position: relative;
     transition: color 0.3s ease;
@@ -189,19 +189,19 @@ main a::before {
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: #bb6057;
+    background-color: #3F81A6;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s ease;
 }
 
 main a:hover {
-    color: #AB433A;
+    color: #3F81A6;
 }
 
 main a:hover::before {
     transform: scaleX(1);
-    background-color: #AB433A;
+    background-color: #3F81A6;
 }
 
 /* Hero Section */
@@ -221,9 +221,9 @@ section h2 {
     min-width: 0;
     margin-bottom: 0;
     font-size: 36px;
-    font-weight: 400;
+    font-weight: 300;
     font-family: 'Barlow', sans-serif;
-    color: #AB433A;
+    color: #3F81A6;
     text-align: left;
     display: flex;
     align-items: center;
@@ -237,7 +237,14 @@ section > div {
     max-width: 680px;
 }
 
+/* About Section */
 
+.about-signature {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Barlow', sans-serif;
+}
 
 
 /* Profile Section */
@@ -290,7 +297,7 @@ textarea {
 
 .submit-btn,
 button[type="submit"] {
-    background-color: #bb6057;
+    background-color: #3F81A6;
     color: white;
     border: none;
     margin-top: 20px;
@@ -305,7 +312,7 @@ button[type="submit"] {
 
 .submit-btn:hover,
 button[type="submit"]:hover {
-    background-color: #AB433A;
+    background-color: #3F81A6;
 }
 
 /* Checkbox Styles */
