@@ -257,6 +257,14 @@ function initLanguageSelector() {
 // システム全体の初期化
 function initLanguageSystem() {
     try {
+        // Polyglotライブラリの確認
+        if (typeof Polyglot === 'undefined') {
+            console.error('❌ Polyglot ライブラリが読み込まれていません');
+            console.error('💡 CDNまたはスクリプトタグを確認してください');
+            showFallbackError('翻訳ライブラリの読み込みに失敗しました');
+            return false;
+        }
+        
         const pageName = getCurrentPageName();
         const defaultLanguage = determineOptimalLanguage();
         
@@ -268,12 +276,14 @@ function initLanguageSystem() {
         if (!commonExists) {
             console.error('⚠️  共通翻訳データ (COMMON_TRANSLATIONS) が読み込まれていません');
             console.error('💡 translations/common.js が読み込まれているか確認してください');
+            showFallbackError('共通翻訳データの読み込みに失敗しました');
             return false;
         }
         
         if (!pageExists) {
             console.error(`⚠️  ページ翻訳データ (${pageVarName}) が読み込まれていません`);
             console.error(`💡 translations/${pageName}.js が読み込まれているか確認してください`);
+            showFallbackError(`ページ翻訳データ (${pageName}) の読み込みに失敗しました`);
             return false;
         }
         
@@ -293,7 +303,37 @@ function initLanguageSystem() {
         
     } catch (error) {
         console.error('多言語化システムの初期化に失敗:', error);
+        showFallbackError('多言語化システムの初期化に失敗しました: ' + error.message);
         return false;
+    }
+}
+
+// エラー表示用のフォールバック関数
+function showFallbackError(message) {
+    // 開発者モードでのエラー表示（本番では削除）
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        const errorDiv = document.createElement('div');
+        errorDiv.style.cssText = `
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #ffebee;
+            border: 1px solid #f44336;
+            color: #c62828;
+            padding: 10px;
+            border-radius: 4px;
+            z-index: 10000;
+            max-width: 300px;
+            font-size: 12px;
+        `;
+        errorDiv.textContent = `i18n Error: ${message}`;
+        document.body.appendChild(errorDiv);
+        
+        setTimeout(() => {
+            if (errorDiv.parentNode) {
+                errorDiv.parentNode.removeChild(errorDiv);
+            }
+        }, 10000);
     }
 }
 

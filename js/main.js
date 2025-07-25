@@ -27,9 +27,32 @@ if (document.readyState === 'loading') {
 
 // メイン処理
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM読み込み完了');
+    
+    // 必要なライブラリの存在確認
+    if (typeof Polyglot === 'undefined') {
+        console.error('❌ Polyglot ライブラリが読み込まれていません');
+        return;
+    }
+    console.log('✅ Polyglot ライブラリが利用可能');
+    
+    // 翻訳ファイルの存在確認
+    if (typeof window.COMMON_TRANSLATIONS === 'undefined') {
+        console.error('❌ 共通翻訳データが読み込まれていません');
+        return;
+    }
+    console.log('✅ 共通翻訳データが利用可能');
+    
     // 多言語化の初期化
     if (window.i18n && typeof window.i18n.init === 'function') {
-        window.i18n.init();
+        const initResult = window.i18n.init();
+        if (initResult) {
+            console.log('✅ 多言語化システム初期化成功');
+        } else {
+            console.error('❌ 多言語化システム初期化失敗');
+        }
+    } else {
+        console.error('❌ i18nシステムが利用できません');
     }
 
     // フォーム送信の処理
