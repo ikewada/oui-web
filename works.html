@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=1.1">
+    <link rel="stylesheet" href="css/style.css?v=1.2">
 </head>
 <body>
     <header>
@@ -35,16 +35,13 @@
     </header>
 
     <main class="works-layout">
-        <!-- 左カラム：画像エリア -->
         <div class="works-image-column">
             <div class="works-image-container">
                 <img src="images/image_ouidice_main.png" alt="Oui Dice App Screenshot" class="works-main-image">
             </div>
         </div>
         
-        <!-- 右カラム：コンテンツエリア -->
         <div class="works-content-column">
-            <!-- Works Hero Section -->
             <section class="works-hero" id="works">
                 <div class="works-content">
                     <h2 data-i18n="app_name">Oui Dice</h2>
@@ -54,134 +51,119 @@
                 </div>
             </section>
 
-        <!-- Features Section -->
-        <section class="features">
-            <h3 data-i18n="features_title">フィーチャー</h3>
-            <div class="works-content">
-                <div class="features-list">
-                    <ul>
-                        <li data-i18n="feature_graphics">高精細な3Dグラフィック</li>
-                        <li data-i18n="feature_variety">多種多様な形状、質感、デザインのダイスを用意</li>
-                        <li data-i18n="feature_paint">ダイステクスチャのペイント機能（立方体ダイスのみ）</li>
-                        <li data-i18n="feature_import">カメラロールやストレージからのテクスチャインポートおよびエクスポート</li>
-                        <li data-i18n="feature_share">ソーシャルメディアへのシェア</li>
-                        <li data-i18n="feature_orientation">縦持ち、横持ち両対応</li>
-                        <li data-i18n="feature_wallpaper">多様で美しい壁紙</li>
-                        <li data-i18n="feature_intuitive">直感的操作</li>
-                    </ul>
+            <section class="features">
+                <h3 data-i18n="features_title">フィーチャー</h3>
+                <div class="works-content">
+                    <div class="features-list">
+                        <ul>
+                            <li data-i18n="feature_graphics">高精細な3Dグラフィック</li>
+                            <li data-i18n="feature_variety">多種多様な形状、質感、デザインのダイスを用意</li>
+                            <li data-i18n="feature_paint">ダイステクスチャのペイント機能（立方体ダイスのみ）</li>
+                            <li data-i18n="feature_import">カメラロールやストレージからのテクスチャインポートおよびエクスポート</li>
+                            <li data-i18n="feature_share">ソーシャルメディアへのシェア</li>
+                            <li data-i18n="feature_orientation">縦持ち、横持ち両対応</li>
+                            <li data-i18n="feature_wallpaper">多様で美しい壁紙</li>
+                            <li data-i18n="feature_intuitive">直感的操作</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Premium Version Section -->
-        <section class="premium">
-            <h3 data-i18n="premium_title">プレミア版について</h3>
-            <div class="works-content">
-                <p data-i18n="premium_description">本アプリはほとんどの機能が無料で提供されておりますが、アプリ内課金システムによりプレミア版へのアップグレードが可能です。<br>
-                無料版と有料版の違いは以下です。</p>
-                
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th data-i18n="table_feature">機能</th>
-                            <th data-i18n="table_free">無料版</th>
-                            <th data-i18n="table_premium">プレミア版</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="feature-label" data-i18n="feature_shapes">形状</td>
-                            <td class="free-version" data-i18n="shapes_free">立方体（D6）のみ</td>
-                            <td class="premium-version" data-i18n="shapes_premium">D4、D6、D8、D10、D12、D20</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-label" data-i18n="feature_materials">マテリアル</td>
-                            <td class="free-version" data-i18n="materials_free">2種類</td>
-                            <td class="premium-version" data-i18n="materials_premium">7種類</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-label" data-i18n="feature_image_import">画像インポート</td>
-                            <td class="free-version" data-i18n="import_free">不可</td>
-                            <td class="premium-version" data-i18n="import_premium">可能</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-label" data-i18n="feature_texture_slots">テクスチャ保存スロット</td>
-                            <td class="free-version" data-i18n="slots_free">1つのみ</td>
-                            <td class="premium-version" data-i18n="slots_premium">上限なし</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- Texture Specifications Section -->
-        <section class="texture-spec">
-            <h3 data-i18n="texture_spec_title">テクスチャの仕様</h3>
-            <div class="works-content">
-                <p data-i18n="texture_spec_description">本アプリにはテクスチャペイント機能がありますが、図のようなレイアウトに準拠した1024x1024ピクセルの画像を読み込むことが可能です。</p>
-                
-                <p data-i18n="texture_spec_details">読み込みはローカルフォルダあるいはカメラロールから行えます。<br>
-                出目のデータは本アプリ内で入力してください（画像データのメタデータ領域に保存される仕様です）。<br>
-                余白部分はダイスには反映されません。</p>
-                
-                <div class="texture-sample">
-                    <a href="images/dice-sample.png" target="_blank" rel="noopener noreferrer">
-                        <img src="images/dice-sample.png" alt="ダイステクスチャレイアウトサンプル" class="texture-sample-image">
-                    </a>
+            <section class="premium">
+                <h3 data-i18n="premium_title">プレミア版について</h3>
+                <div class="works-content">
+                    <p data-i18n="premium_description">本アプリはほとんどの機能が無料で提供されておりますが、アプリ内課金システムによりプレミア版へのアップグレードが可能です。<br>
+                    無料版と有料版の違いは以下です。</p>
+                    
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th data-i18n="table_feature">機能</th>
+                                <th data-i18n="table_free">無料版</th>
+                                <th data-i18n="table_premium">プレミア版</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="feature-label" data-i18n="feature_shapes">形状</td>
+                                <td class="free-version" data-i18n="shapes_free">立方体（D6）のみ</td>
+                                <td class="premium-version" data-i18n="shapes_premium">D4、D6、D8、D10、D12、D20</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-label" data-i18n="feature_materials">マテリアル</td>
+                                <td class="free-version" data-i18n="materials_free">2種類</td>
+                                <td class="premium-version" data-i18n="materials_premium">7種類</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-label" data-i18n="feature_image_import">画像インポート</td>
+                                <td class="free-version" data-i18n="import_free">不可</td>
+                                <td class="premium-version" data-i18n="import_premium">可能</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-label" data-i18n="feature_texture_slots">テクスチャ保存スロット</td>
+                                <td class="free-version" data-i18n="slots_free">1つのみ</td>
+                                <td class="premium-version" data-i18n="slots_premium">上限なし</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Import Method Section -->
-        <section class="import-method">
-            <h3 data-i18n="import_method_title">テクスチャのインポート方法</h2>
-            <div class="works-content">
-                <p data-i18n="import_method_description">カメラロールに取り込むか、ローカルフォルダあるいはGoogleDriveやDropboxなどのクラウドストレージサービスを使ってインポートしてください。<br>
-                いずれの方法でも、新規テクスチャ作成ボタン（プラスボタン）よりインポート可能です。</p>
-            </div>
-        </section>
-
-        <!-- Privacy Section -->
-        <section class="privacy">
-            <h3 data-i18n="privacy_title">個人情報について</h3>
-            <div class="works-content">
-                <p data-i18n="privacy_description">Oui Diceは、ユーザーの個人情報やデータを一切収集、保存、共有しません。</p>
-                <div class="features-list">
-                    <ul>
-                        <li data-i18n="privacy_personal">ユーザーの個人情報（氏名、メールアドレス、位置情報など）は取得しません。</li>
-                        <li data-i18n="privacy_device">端末内のデータや利用状況も収集しません。</li>
-                        <li data-i18n="privacy_sharing">第三者と情報を共有することもありません。</li>
-                    </ul>
+            <section class="texture-spec">
+                <h3 data-i18n="texture_spec_title">テクスチャの仕様</h3>
+                <div class="works-content">
+                    <p data-i18n="texture_spec_description">本アプリにはテクスチャペイント機能がありますが、図のようなレイアウトに準拠した1024x1024ピクセルの画像を読み込むことが可能です。</p>
+                    
+                    <p data-i18n="texture_spec_details">読み込みはローカルフォルダあるいはカメラロールから行えます。<br>
+                    出目のデータは本アプリ内で入力してください（画像データのメタデータ領域に保存される仕様です）。<br>
+                    余白部分はダイスには反映されません。</p>
+                    
+                    <div class="texture-sample">
+                        <a href="images/dice-sample.png" target="_blank" rel="noopener noreferrer">
+                            <img src="images/dice-sample.png" alt="ダイステクスチャレイアウトサンプル" class="texture-sample-image">
+                        </a>
+                    </div>
                 </div>
-                <br>
-                <p><span data-i18n="contact_description_prefix">ご不明な点がございましたら、</span><a href="index.html#contact" data-i18n="contact_link_text">こちら</a><span data-i18n="contact_description_suffix">からお問い合わせください。</span></p>
-            </div>
-        </section>
-        </div> <!-- 右カラム終了 -->
+            </section>
+
+            <section class="import-method">
+                <h3 data-i18n="import_method_title">テクスチャのインポート方法</h3>
+                <div class="works-content">
+                    <p data-i18n="import_method_description">カメラロールに取り込むか、ローカルフォルダあるいはGoogleDriveやDropboxなどのクラウドストレージサービスを使ってインポートしてください。<br>
+                    いずれの方法でも、新規テクスチャ作成ボタン（プラスボタン）よりインポート可能です。</p>
+                </div>
+            </section>
+
+            <section class="privacy">
+                <h3 data-i18n="privacy_title">個人情報について</h3>
+                <div class="works-content">
+                    <p data-i18n="privacy_description">Oui Diceは、ユーザーの個人情報やデータを一切収集、保存、共有しません。</p>
+                    <div class="features-list">
+                        <ul>
+                            <li data-i18n="privacy_personal">ユーザーの個人情報（氏名、メールアドレス、位置情報など）は取得しません。</li>
+                            <li data-i18n="privacy_device">端末内のデータや利用状況も収集しません。</li>
+                            <li data-i18n="privacy_sharing">第三者と情報を共有することもありません。</li>
+                        </ul>
+                    </div>
+                    <br>
+                    <p><span data-i18n="contact_description_prefix">ご不明な点がございましたら、</span><a href="index.html#contact" data-i18n="contact_link_text">こちら</a><span data-i18n="contact_description_suffix">からお問い合わせください。</span></p>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer class="footer-copyright">
         © 2025 Oui LLC. All rights reserved.
     </footer>
 
-    <script src="https://unpkg.com/node-polyglot@2.5.0/build/polyglot.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/node-polyglot/build/polyglot.min.js"></script>
     <script>
-        // CDNフォールバック: Polyglotが読み込まれていない場合の代替CDN
         window.addEventListener('load', function() {
             if (typeof Polyglot === 'undefined') {
-                console.log('メインCDNからの読み込み失敗、代替CDNを試行中...');
+                console.log('Fallback CDN loading...');
                 const fallbackScript = document.createElement('script');
-                fallbackScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/node-polyglot/2.5.0/polyglot.min.js';
-                fallbackScript.onload = function() {
-                    console.log('代替CDNからの読み込み成功');
-                    // 多言語化システムを再初期化
-                    if (window.i18n && typeof window.i18n.init === 'function') {
-                        window.i18n.init();
-                    }
-                };
-                fallbackScript.onerror = function() {
-                    console.error('すべてのCDNからの読み込みに失敗しました');
-                };
+                fallbackScript.src = 'https://cdn.jsdelivr.net/npm/node-polyglot/build/polyglot.min.js';
+                fallbackScript.onload = () => window.i18n?.init?.();
                 document.head.appendChild(fallbackScript);
             }
         });

@@ -1,4 +1,6 @@
-/* Base Styles */
+/* ==========================================================================
+   Reset & Base Styles
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +14,10 @@ body {
     color: #333;
     background-color: #edecea;
 }
+
+/* ==========================================================================
+   Layout Components
+   ========================================================================== */
 
 /* Header */
 header {
@@ -36,7 +42,7 @@ header {
 nav ul {
     list-style: none;
     display: flex;
-    align-items: center; /* WorksとアイコンのY座標を揃える */
+    align-items: center;
     background-color: #edecea;
     padding: 30px;
 }
@@ -56,10 +62,73 @@ nav ul li a {
     position: relative;
 }
 
-/* 言語選択ドロップダウン */
+/* Main Content Layouts */
+main {
+    margin-top: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px;
+    padding: 40px 50px 0 50px;
+    min-height: 100vh;
+}
+
+/* Works 2-Column Layout */
+main.works-layout {
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+}
+
+.works-image-column {
+    flex: 0 0 340px;
+    position: sticky;
+    top: 200px;
+    height: calc(100vh - 160px);
+    min-width: 340px;
+}
+
+.works-image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.works-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: top;
+}
+
+.works-content-column {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Footer */
+footer {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.footer-copyright {
+    text-align: right;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+}
+
+/* ==========================================================================
+   Language Selector Component
+   ========================================================================== */
 .lang-select {
     position: relative;
 }
+
 .lang-dropdown-btn {
     background: none;
     border: none;
@@ -72,11 +141,13 @@ nav ul li a {
     position: relative;
     z-index: 20;
 }
+
 .lang-icon {
     width: 28px;
     height: 28px;
     display: block;
 }
+
 .lang-dropdown-list {
     display: none;
     position: absolute;
@@ -91,9 +162,11 @@ nav ul li a {
     padding: 0;
     list-style: none;
 }
+
 .lang-dropdown-list.open {
     display: block;
 }
+
 .lang-option {
     padding: 8px 16px;
     cursor: pointer;
@@ -102,95 +175,15 @@ nav ul li a {
     background: none;
     text-align: left;
 }
+
 .lang-option.selected,
 .lang-option:hover {
     background: #F0F4F2;
 }
 
-
-.tooltip {
-    position: relative;
-    display: inline-block;
-}
-
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 160px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    border-radius: 4px;
-    padding: 8px;
-    position: absolute;
-    z-index: 1;
-    top: 125%;
-    left: 50%;
-    margin-left: -80px;
-    opacity: 0;
-    transition: opacity 0.3s;
-    font-size: 14px;
-    font-weight: normal;
-}
-
-.tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent #333 transparent;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-}
-
-/* Main Content - シンプルレイアウト（works.html等用） */
-main {
-    margin-top: 120px; /* 固定ヘッダー分の上部余白 */
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1280px;
-    padding: 40px 50px 0 50px;
-    min-height: 100vh;
-}
-
-/* リンクの下線アニメーション */
-main a {
-    color: #3F81A6;
-    text-decoration: none;
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-main a::before {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: #3F81A6;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-}
-
-main a:hover {
-    color: #3F81A6;
-}
-
-main a:hover::before {
-    transform: scaleX(1);
-    background-color: #3F81A6;
-}
-
-/* Hero Section */
-
-/* Content Sections */
+/* ==========================================================================
+   Content Sections
+   ========================================================================== */
 section {
     display: flex;
     flex-direction: column;
@@ -200,44 +193,35 @@ section {
 }
 
 section h2 {
-    width: 100%;
-    min-width: 0;
-    margin-bottom: 0;
     font-size: 36px;
     font-weight: 300;
     font-family: 'Barlow', sans-serif;
     color: #3F81A6;
-    text-align: left;
-    display: flex;
-    align-items: center;
+    margin-bottom: 0;
 }
 
 section h3 {
-    width: 100%;
-    min-width: 0;
-    margin-bottom: 0;
     font-size: 24px;
     font-weight: 600;
     font-family: 'Barlow', sans-serif;
     color: #333;
-    text-align: left;
-    display: flex;
-    align-items: center;
+    margin-bottom: 0;
 }
 
 section > div {
     width: 100%;
 }
 
-.about-content, .profile-content, .contact-content {
+/* Content Width Constraints */
+.about-content, 
+.profile-content, 
+.contact-content {
     max-width: 680px;
 }
 
 .works-content {
     max-width: 800px;
 }
-
-/* About Section */
 
 .about-signature {
     margin-top: 20px;
@@ -246,8 +230,9 @@ section > div {
     font-family: 'Barlow', sans-serif;
 }
 
-
-/* Profile Section */
+/* ==========================================================================
+   Profile Section
+   ========================================================================== */
 dl {
     display: grid;
     grid-template-columns: 120px 1fr;
@@ -268,7 +253,9 @@ dd {
     overflow-wrap: break-word;
 }
 
-/* Contact Form */
+/* ==========================================================================
+   Form Components
+   ========================================================================== */
 form {
     margin-top: 30px;
 }
@@ -283,7 +270,8 @@ label {
     margin-bottom: 5px;
 }
 
-input, textarea {
+input, 
+textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -295,7 +283,6 @@ textarea {
     resize: vertical;
 }
 
-.submit-btn,
 button[type="submit"] {
     background-color: #3F81A6;
     color: white;
@@ -310,12 +297,10 @@ button[type="submit"] {
     transition: background 0.2s;
 }
 
-.submit-btn:hover,
 button[type="submit"]:hover {
-    background-color: #3F81A6;
+    background-color: #2a5a7a;
 }
 
-/* Checkbox Styles */
 .checkbox-group {
     display: flex;
     align-items: center;
@@ -336,16 +321,18 @@ button[type="submit"]:hover {
     line-height: 1.5;
 }
 
-/* Table Styles */
+/* ==========================================================================
+   Table Components
+   ========================================================================== */
 .comparison-table {
-    border-collapse: collapse !important;
-    width: 100% !important;
+    border-collapse: collapse;
+    width: 100%;
     margin: 20px 0;
-    background-color: #fff !important;
+    background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    table-layout: fixed; /* テーブルの幅を安定させる */
+    table-layout: fixed;
 }
 
 .comparison-table th,
@@ -388,7 +375,9 @@ button[type="submit"]:hover {
     font-weight: 500;
 }
 
-/* Feature Section */
+/* ==========================================================================
+   List Components
+   ========================================================================== */
 .features-list {
     margin: 0;
 }
@@ -412,21 +401,67 @@ button[type="submit"]:hover {
     left: 0;
 }
 
-/* Responsive */
-footer {
-    max-width: 1280px;
-    margin: 0 auto;
+/* ==========================================================================
+   Link Styles
+   ========================================================================== */
+main a {
+    color: #3F81A6;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-.footer-copyright {
-    text-align: right;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    padding-right: 40px;
-    padding-bottom: 40px;
+main a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #3F81A6;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
 }
 
-/* Modal Styles */
+main a:hover::before {
+    transform: scaleX(1);
+}
+
+/* ==========================================================================
+   Image Components
+   ========================================================================== */
+.texture-sample {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.texture-sample a {
+    display: inline-block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.texture-sample a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.texture-sample-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    object-fit: contain;
+}
+
+/* ==========================================================================
+   Modal Components
+   ========================================================================== */
 .modal {
     display: none;
     position: fixed;
@@ -504,7 +539,59 @@ footer {
     color: #555;
 }
 
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
 @media (max-width: 768px) {
+    header {
+        background-color: #edecea;
+    }
+    
+    main {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 120px;
+        padding: 40px 20px 0 20px;
+        max-width: none;
+    }
+    
+    main.works-layout {
+        flex-direction: column;
+        gap: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .works-image-column {
+        flex: none;
+        position: static;
+        height: 300px;
+        width: 100%;
+        order: -1;
+    }
+    
+    .works-image-container {
+        height: 300px;
+        margin-bottom: 20px;
+    }
+    
+    .works-content-column {
+        flex: none;
+        width: 100%;
+    }
+    
+    dl {
+        grid-template-columns: 100px 1fr;
+        grid-gap: 15px 8px;
+    }
+    
+    dt {
+        margin-top: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
     .modal-content {
         width: 95%;
         margin: 10% auto;
@@ -525,135 +612,5 @@ footer {
     
     .modal-body h4 {
         font-size: 16px;
-    }
-}
-
-/* シンプルなレスポンシブ対応（モバイル・デスクトップのみ） */
-@media (max-width: 768px) {
-    header {
-        background-color: #edecea;
-    }
-    
-    /* モバイル表示時のレイアウト調整 */
-    main {
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 120px;
-        padding: 40px 20px 0 20px;
-        max-width: none;
-    }
-    
-    dl {
-        grid-template-columns: 100px 1fr;
-        grid-gap: 15px 8px;
-    }
-    
-    dt {
-        margin-top: 0;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-}
-
-/* Works Page 2-Column Layout */
-main.works-layout {
-    display: flex !important;
-    gap: 80px;
-    align-items: flex-start;
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-top: 120px; /* ヘッダー分の余白を確保 */
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1280px;
-}
-
-.works-image-column {
-    flex: 0 0 340px !important; /* 固定幅340px */
-    position: sticky;
-    top: 200px; /* ヘッダー分の余白 */
-    height: calc(100vh - 160px); /* 画面高さからヘッダー分を引く */
-    min-width: 340px; /* 最小幅を確保 */
-}
-
-.works-image-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.works-main-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: top;
-}
-
-.works-content-column {
-    flex: 1 !important;
-    min-width: 0; /* flexboxの幅制限を回避 */
-    width: 100%; /* 確実に幅を取る */
-}
-
-/* Texture Sample Image Styles */
-.texture-sample {
-    margin: 30px 0;
-    text-align: center;
-}
-
-.texture-sample a {
-    display: inline-block;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.texture-sample a:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
-
-.texture-sample-image {
-    display: block !important;
-    max-width: 100% !important;
-    height: auto !important;
-    max-height: 400px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    cursor: pointer;
-    object-fit: contain; /* 画像の縦横比を維持 */
-}
-
-
-
-/* Works Page - モバイル対応 */
-@media (max-width: 768px) {
-    main.works-layout {
-        flex-direction: column;
-        gap: 20px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    
-    .works-image-column {
-        flex: none;
-        position: static;
-        height: 300px;
-        width: 100%;
-        order: -1; /* 画像を上に配置 */
-    }
-    
-    .works-image-container {
-        height: 300px;
-        margin-bottom: 20px;
-    }
-    
-    .works-content-column {
-        flex: none;
-        width: 100%;
     }
 }

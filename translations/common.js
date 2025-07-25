@@ -1,4 +1,7 @@
-// 共通翻訳データ（ヘッダー、フッター、ナビゲーション等）
+/**
+ * Common translations for all pages
+ * Header, footer, navigation elements
+ */
 window.COMMON_TRANSLATIONS = {
     ja: {
         site_title: "Oui - Digital Content Creation",

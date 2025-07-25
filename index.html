@@ -7,11 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=1.1">
-    <link rel="stylesheet" href="css/index-layout.css?v=1.1">
+    <link rel="stylesheet" href="css/style.css?v=1.2">
+    <link rel="stylesheet" href="css/index-layout.css?v=1.2">
 </head>
 <body class="index-layout">
-    <!-- 背景動画 -->
     <video id="background-video" muted playsinline preload="auto">
         <source src="video/Background.mp4" type="video/mp4">
     </video>
@@ -117,7 +116,6 @@
         © 2025 Oui LLC. All rights reserved.
     </footer>
     
-<!-- Privacy Policy Modal -->
     <div id="privacy-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -142,24 +140,14 @@
         </div>
     </div>
 
-    <script src="https://unpkg.com/node-polyglot@2.5.0/build/polyglot.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/node-polyglot/build/polyglot.min.js"></script>
     <script>
-        // CDNフォールバック: Polyglotが読み込まれていない場合の代替CDN
         window.addEventListener('load', function() {
             if (typeof Polyglot === 'undefined') {
-                console.log('メインCDNからの読み込み失敗、代替CDNを試行中...');
+                console.log('Fallback CDN loading...');
                 const fallbackScript = document.createElement('script');
-                fallbackScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/node-polyglot/2.5.0/polyglot.min.js';
-                fallbackScript.onload = function() {
-                    console.log('代替CDNからの読み込み成功');
-                    // 多言語化システムを再初期化
-                    if (window.i18n && typeof window.i18n.init === 'function') {
-                        window.i18n.init();
-                    }
-                };
-                fallbackScript.onerror = function() {
-                    console.error('すべてのCDNからの読み込みに失敗しました');
-                };
+                fallbackScript.src = 'https://cdn.jsdelivr.net/npm/node-polyglot/build/polyglot.min.js';
+                fallbackScript.onload = () => window.i18n?.init?.();
                 document.head.appendChild(fallbackScript);
             }
         });

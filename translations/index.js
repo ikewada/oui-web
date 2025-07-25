@@ -1,11 +1,16 @@
-// index.html専用の翻訳データ
+/**
+ * Index page translations
+ * About, profile, contact sections and privacy policy
+ */
 window.INDEX_TRANSLATIONS = {
     ja: {
+        // About section
         about_title: "About Oui",
         about_1: "Unity社のアドボケートとして活動した8年間の経験を活かし、現在はゲーム開発を中心に多様なクリエイティブプロジェクトに取り組んでいます。",
         about_2: "デザイン力と表現力に加え、幅広い技術への柔軟な対応力を強みとし、常に進化するテクノロジーの流れを楽しみながら、新たな表現の可能性を追求しています。",
         about_signature: "池和田 有輔",
         
+        // Profile section
         profile_title: "Company Profile",
         profile_company: "法人名",
         profile_company_val: "Oui合同会社",
@@ -18,6 +23,7 @@ window.INDEX_TRANSLATIONS = {
         profile_capital: "資本金",
         profile_capital_val: "1,000,000円",
         
+        // Contact section
         contact_title: "Contact us",
         contact_desc: "お仕事のご依頼やお問い合わせは下記フォームよりお願いします。",
         contact_label_name: "お名前",
@@ -28,9 +34,9 @@ window.INDEX_TRANSLATIONS = {
         contact_privacy_agree: "に同意する",
         contact_submit: "送信",
         contact_alert: "お問い合わせありがとうございます。近日中にご連絡いたします。",
-        
         privacy_required: "個人情報の取り扱いに同意してください。",
         
+        // Privacy policy modal
         privacy_policy_title: "個人情報保護方針",
         privacy_policy_intro: "Oui合同会社は、個人情報の保護に十分配慮した事業活動を行ってまいります。<br>以下のとおり個人情報保護方針を定め、情報管理に関する社内体制の策定・実施・維持・改善を継続的に行い、関連法令および社内規程を遵守いたします。",
         privacy_section1_title: "情報の収集目的、利用範囲および訂正・削除について",
@@ -44,11 +50,13 @@ window.INDEX_TRANSLATIONS = {
     },
     
     en: {
+        // About section
         about_title: "About Oui",
         about_1: "With eight years of experience as a Unity Advocate, I now focus on game development as the core of my work, while engaging in a wide range of creative projects.",
         about_2: "I bring strong skills in design and expression, along with the ability to adapt to diverse technologies. Embracing the ever-evolving landscape of technology, I continuously explore new possibilities for creative expression.",
         about_signature: "Yusuke Ikewada",
         
+        // Profile section
         profile_title: "Company Profile",
         profile_company: "Company",
         profile_company_val: "Oui LLC",
@@ -61,6 +69,7 @@ window.INDEX_TRANSLATIONS = {
         profile_capital: "Capital",
         profile_capital_val: "1,000,000 JPY",
         
+        // Contact section
         contact_title: "Contact us",
         contact_desc: "Please use this form to contact us.",
         contact_label_name: "Name",
@@ -71,9 +80,9 @@ window.INDEX_TRANSLATIONS = {
         contact_privacy_agree: "I agree to the ",
         contact_submit: "Send",
         contact_alert: "Thank you for your inquiry. We will contact you soon.",
-        
         privacy_required: "Please agree to the handling of personal information.",
         
+        // Privacy policy modal
         privacy_policy_title: "Privacy Policy",
         privacy_policy_intro: "Oui LLC conducts business activities with full consideration for the protection of personal information.<br>We have established the following privacy policy and will continuously implement, maintain, and improve our internal systems for information management, while complying with relevant laws and internal regulations.",
         privacy_section1_title: "Purpose of Information Collection, Scope of Use, and Correction/Deletion",

@@ -1,188 +1,170 @@
-// 背景動画の制御
+/**
+ * Main JavaScript for Oui Website
+ * Handles background video, contact form, privacy modal, and i18n initialization
+ */
+
 let backgroundVideo = null;
 let videoDuration = 0;
 
-// 動画の初期化
+/**
+ * 背景動画の初期化
+ */
 function initBackgroundVideo() {
     backgroundVideo = document.getElementById('background-video');
-    
-    if (backgroundVideo) {
-        // 動画の準備ができたら初期設定
-        backgroundVideo.addEventListener('loadedmetadata', function() {
-            videoDuration = backgroundVideo.duration;
-            backgroundVideo.currentTime = 0; // 最初のフレームを表示
-        });
-        
-        // 動画の読み込み開始
-        backgroundVideo.load();
-    }
+    if (!backgroundVideo) return;
+    backgroundVideo.addEventListener('loadedmetadata', function() {
+        videoDuration = backgroundVideo.duration;
+        backgroundVideo.currentTime = 0;
+    });
+    backgroundVideo.load();
 }
 
-// DOM読み込み時に動画を初期化
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initBackgroundVideo);
-} else {
+/**
+ * メイン初期化処理
+ */
+function init() {
+    console.log('🚀 Oui Website initialized');
     initBackgroundVideo();
-}
-
-// メイン処理
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM読み込み完了');
-    
     // 必要なライブラリの存在確認
     if (typeof Polyglot === 'undefined') {
-        console.error('❌ Polyglot ライブラリが読み込まれていません');
+        console.error('❌ Polyglot library not loaded');
         return;
     }
-    console.log('✅ Polyglot ライブラリが利用可能');
-    
-    // 翻訳ファイルの存在確認
     if (typeof window.COMMON_TRANSLATIONS === 'undefined') {
-        console.error('❌ 共通翻訳データが読み込まれていません');
+        console.error('❌ Common translations not loaded');
         return;
     }
-    console.log('✅ 共通翻訳データが利用可能');
-    
-    // 多言語化の初期化
-    if (window.i18n && typeof window.i18n.init === 'function') {
-        const initResult = window.i18n.init();
-        if (initResult) {
-            console.log('✅ 多言語化システム初期化成功');
-        } else {
-            console.error('❌ 多言語化システム初期化失敗');
-        }
-    } else {
-        console.error('❌ i18nシステムが利用できません');
+    // 多言語化システム初期化
+    if (window.i18n?.init) {
+        const success = window.i18n.init();
+        console.log(success ? '✅ i18n initialized' : '❌ i18n initialization failed');
     }
-
-    // フォーム送信の処理
+    // 各機能の初期化
     initContactForm();
-    
-    // プライバシーポリシーモーダルの初期化
     initPrivacyModal();
-    
-    // 動画のスクロール連動機能の初期化
     initVideoScrollSync();
-});
+}
 
-// フォーム送信処理の初期化
+/**
+ * お問い合わせフォームの初期化
+ */
 function initContactForm() {
-    const contactForm = document.getElementById('contactForm');
+    const form = document.getElementById('contactForm');
+    const privacyCheckbox = document.getElementById('privacy');
     
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            const privacyCheckbox = document.getElementById('privacy');
-            
-            if (!privacyCheckbox.checked) {
-                e.preventDefault();
-                // 多言語化されたメッセージを表示
-                const message = window.i18n && window.i18n.t 
-                    ? window.i18n.t('privacy_required')
-                    : '個人情報の取り扱いに同意してください。';
-                alert(message);
-                return false;
-            }
-        });
-    }
-}
-
-// プライバシーポリシーモーダルの初期化
-function initPrivacyModal() {
-    const privacyModal = document.getElementById('privacy-modal');
-    const privacyLink = document.getElementById('privacy-policy-link');
-    const closeModal = document.querySelector('.close');
-
-    if (privacyLink && privacyModal) {
-        privacyLink.addEventListener('click', function(e) {
+    if (!form || !privacyCheckbox) return;
+    
+    form.addEventListener('submit', function(e) {
+        if (!privacyCheckbox.checked) {
             e.preventDefault();
-            privacyModal.style.display = 'block';
-        });
-    }
-
-    if (closeModal && privacyModal) {
-        closeModal.addEventListener('click', function() {
-            privacyModal.style.display = 'none';
-        });
-    }
-
-    if (privacyModal) {
-        window.addEventListener('click', function(e) {
-            if (e.target === privacyModal) {
-                privacyModal.style.display = 'none';
-            }
-        });
-    }
+            const message = window.i18n?.t?.('privacy_required') || 
+                          '個人情報の取り扱いに同意してください。';
+            alert(message);
+        }
+    });
 }
 
-// 動画のスクロール連動機能の初期化
+/**
+ * プライバシーポリシーモーダルの初期化
+ */
+function initPrivacyModal() {
+    const modal = document.getElementById('privacy-modal');
+    const link = document.getElementById('privacy-policy-link');
+    const closeBtn = document.querySelector('.close');
+
+    if (!modal) return;
+
+    // モーダルを開く
+    if (link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.style.display = 'block';
+        });
+    }
+
+    // モーダルを閉じる
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    }
+
+    // 外部クリックで閉じる
+    window.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+}
+
+/**
+ * 動画のスクロール連動機能の初期化
+ */
 function initVideoScrollSync() {
-    // スクロールによる動画コマ送り（アニメーション付き）
+    if (!backgroundVideo) return;
+
     let targetTime = 0;
     let isAnimating = false;
     let animationStartTime = 0;
     let animationStartValue = 0;
-    const animationDuration = 1000; // 1秒
+    const animationDuration = 1000;
 
-    function updateBackgroundVideo() {
-        if (!backgroundVideo || videoDuration === 0) return;
+    function updateVideoTime() {
+        if (videoDuration === 0) return;
         
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
         const scrollProgress = Math.min(scrollTop / scrollHeight, 1);
         
-        // 新しい目標時間を計算
         const newTargetTime = scrollProgress * videoDuration;
         
-        // 目標が変わった場合はアニメーション開始
         if (Math.abs(newTargetTime - targetTime) > 0.01) {
             targetTime = newTargetTime;
-            startVideoAnimation();
+            startAnimation();
         }
     }
 
-    function startVideoAnimation() {
-        if (!isAnimating) {
-            isAnimating = true;
-            animationStartTime = performance.now();
-            animationStartValue = backgroundVideo.currentTime;
-            animateVideoTime();
-        }
+    function startAnimation() {
+        if (isAnimating) return;
+        
+        isAnimating = true;
+        animationStartTime = performance.now();
+        animationStartValue = backgroundVideo.currentTime;
+        animateFrame();
     }
 
-    function animateVideoTime() {
+    function animateFrame() {
         if (!isAnimating) return;
         
-        const currentTime = performance.now();
-        const elapsed = currentTime - animationStartTime;
+        const elapsed = performance.now() - animationStartTime;
         const progress = Math.min(elapsed / animationDuration, 1);
+        const easedProgress = 1 - Math.pow(1 - progress, 3); // ease-out
         
-        // Easing function (ease-out)
-        const easedProgress = 1 - Math.pow(1 - progress, 3);
-        
-        // 現在値から目標値へのアニメーション
-        const currentVideoTime = animationStartValue + (targetTime - animationStartValue) * easedProgress;
-        backgroundVideo.currentTime = currentVideoTime;
+        const currentTime = animationStartValue + (targetTime - animationStartValue) * easedProgress;
+        backgroundVideo.currentTime = currentTime;
         
         if (progress < 1) {
-            requestAnimationFrame(animateVideoTime);
+            requestAnimationFrame(animateFrame);
         } else {
             isAnimating = false;
         }
     }
 
-    // スクロールイベントリスナーの追加（パフォーマンス最適化のためにスロットリング）
+    // スロットリングされたスクロールイベント
     let scrollTimeout;
     window.addEventListener('scroll', function() {
-        if (scrollTimeout) {
-            clearTimeout(scrollTimeout);
-        }
-        scrollTimeout = setTimeout(updateBackgroundVideo, 16); // 60fps相当
+        if (scrollTimeout) clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(updateVideoTime, 16); // 60fps相当
     });
 
-    // 初期動画設定（動画が読み込まれた後に呼び出し）
-    if (backgroundVideo && backgroundVideo.readyState >= 1) {
-        updateBackgroundVideo();
-    } else if (backgroundVideo) {
-        backgroundVideo.addEventListener('loadedmetadata', updateBackgroundVideo);
+    // 初期設定
+    if (backgroundVideo.readyState >= 1) {
+        updateVideoTime();
+    } else {
+        backgroundVideo.addEventListener('loadedmetadata', updateVideoTime);
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    init();
+});
