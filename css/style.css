@@ -1,8 +1,4 @@
 /* Base Styles */
-:root {
-    --bg-width: 50vw; /* 背景画像の幅を画面幅の50%と仮定 */
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -15,18 +11,6 @@ body {
     letter-spacing: 0.05em;
     color: #333;
     background-color: #edecea;
-}
-
-/* 背景動画 */
-#background-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: auto;
-    z-index: -1;
-    object-fit: cover;
-    object-position: left top;
 }
 
 /* Header */
@@ -164,13 +148,13 @@ nav ul li a {
     opacity: 1;
 }
 
-/* Main Content */
+/* Main Content - シンプルレイアウト（works.html等用） */
 main {
-    margin-left: var(--bg-width); /* 背景画像の幅分の余白 */
     margin-top: 120px; /* 固定ヘッダー分の上部余白 */
-    margin-right: 50px;
-    padding-top: 40px;
-    padding-left: 20px; /* 追加の余白 */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px;
+    padding: 40px 50px 0 50px;
     min-height: 100vh;
 }
 
@@ -211,9 +195,8 @@ section {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 1280px;
-    margin: 20px auto;
-    padding: 40px 0;
+    margin: 20px 0;
+    padding: 20px 0;
 }
 
 section h2 {
@@ -229,12 +212,29 @@ section h2 {
     align-items: center;
 }
 
+section h3 {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 0;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Barlow', sans-serif;
+    color: #333;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
 section > div {
     width: 100%;
 }
 
 .about-content, .profile-content, .contact-content {
     max-width: 680px;
+}
+
+.works-content {
+    max-width: 800px;
 }
 
 /* About Section */
@@ -334,6 +334,81 @@ button[type="submit"]:hover {
     margin-bottom: 0;
     cursor: pointer;
     line-height: 1.5;
+}
+
+/* Table Styles */
+.comparison-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.comparison-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #3F81A6;
+}
+
+.comparison-table tr:last-child td {
+    border-bottom: none;
+}
+
+.comparison-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.comparison-table tr:hover {
+    background-color: #f0f4f2;
+}
+
+.comparison-table .feature-label {
+    font-weight: 500;
+    color: #555;
+}
+
+.comparison-table .free-version {
+    color: #666;
+}
+
+.comparison-table .premium-version {
+    color: #3F81A6;
+    font-weight: 500;
+}
+
+/* Feature Section */
+.features-list {
+    margin: 0;
+}
+
+.features-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.features-list li {
+    padding: 2px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.features-list li::before {
+    content: "•";
+    color: #3F81A6;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
 }
 
 /* Responsive */
@@ -452,49 +527,19 @@ footer {
     }
 }
 
-@media (min-width: 1200px) {
-    /* 大画面表示時は背景画像の幅を小さく */
-    :root {
-        --bg-width: 45vw;
-    }
-}
-
-@media (min-width: 1600px) {
-    /* 大画面表示時は背景画像の幅を小さく */
-    :root {
-        --bg-width: 38vw;
-    }
-}
-
-@media (min-width: 2100px) {
-    /* 大画面表示時は背景画像の幅を小さく */
-    :root {
-        --bg-width: 30vw;
-    }
-}
-
-@media (min-width: 2600px) {
-    /* 大画面表示時は背景画像の幅を小さく */
-    :root {
-        --bg-width: 20vw;
-    }
-}
-
+/* シンプルなレスポンシブ対応（モバイル・デスクトップのみ） */
 @media (max-width: 768px) {
-    /* モバイル表示時は背景動画を非表示 */
-    #background-video {
-        display: none;
-    }
-
     header {
         background-color: #edecea;
     }
     
-    /* モバイル表示時は左余白をなくす */
+    /* モバイル表示時のレイアウト調整 */
     main {
-        margin-left: 0;
-        margin-top: 120px; /* 固定ヘッダー分の上部余白 */
-        padding-left: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 120px;
+        padding: 40px 20px 0 20px;
+        max-width: none;
     }
     
     dl {
@@ -507,5 +552,100 @@ footer {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+}
+
+/* Works Page 2-Column Layout */
+main.works-layout {
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.works-image-column {
+    flex: 0 0 340px; /* 固定幅340px */
+    position: sticky;
+    top: 200px; /* ヘッダー分の余白 */
+    height: calc(100vh - 160px); /* 画面高さからヘッダー分を引く */
+}
+
+.works-image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.works-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: top;
+}
+
+.works-content-column {
+    flex: 1;
+    min-width: 0; /* flexboxの幅制限を回避 */
+}
+
+/* Texture Sample Image Styles */
+.texture-sample {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.texture-sample a {
+    display: inline-block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.texture-sample a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.texture-sample-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+
+
+/* Works Page - モバイル対応 */
+@media (max-width: 768px) {
+    main.works-layout {
+        flex-direction: column;
+        gap: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .works-image-column {
+        flex: none;
+        position: static;
+        height: 300px;
+        width: 100%;
+        order: -1; /* 画像を上に配置 */
+    }
+    
+    .works-image-container {
+        height: 300px;
+        margin-bottom: 20px;
+    }
+    
+    .works-content-column {
+        flex: none;
+        width: 100%;
     }
 }

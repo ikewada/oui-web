@@ -1,0 +1,68 @@
+/* index.html専用のレイアウトスタイル */
+
+/* 背景画像の幅制御変数 */
+:root {
+    --bg-width: 50vw; /* 背景画像の幅を画面幅の50%と仮定 */
+}
+
+/* 背景動画 */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: auto;
+    z-index: -1;
+    object-fit: cover;
+    object-position: left top;
+}
+
+/* Main Content - index.html専用レイアウト */
+.index-layout main {
+    margin-left: var(--bg-width); /* 背景画像の幅分の余白 */
+    margin-top: 120px; /* 固定ヘッダー分の上部余白 */
+    margin-right: 50px;
+    padding-top: 40px;
+    padding-left: 20px; /* 追加の余白 */
+    min-height: 100vh;
+}
+
+/* 大画面用の複雑なブレイクポイント制御 */
+@media (min-width: 1200px) {
+    :root {
+        --bg-width: 45vw;
+    }
+}
+
+@media (min-width: 1600px) {
+    :root {
+        --bg-width: 38vw;
+    }
+}
+
+@media (min-width: 2100px) {
+    :root {
+        --bg-width: 30vw;
+    }
+}
+
+@media (min-width: 2600px) {
+    :root {
+        --bg-width: 20vw;
+    }
+}
+
+/* モバイル用（index.html専用） */
+@media (max-width: 768px) {
+    /* モバイル表示時は背景動画を非表示 */
+    #background-video {
+        display: none;
+    }
+
+    /* モバイル表示時は左余白をなくす */
+    .index-layout main {
+        margin-left: 0;
+        margin-top: 120px; /* 固定ヘッダー分の上部余白 */
+        padding-left: 50px;
+    }
+} 

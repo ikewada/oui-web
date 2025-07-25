@@ -8,8 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index-layout.css">
 </head>
-<body>
+<body class="index-layout">
     <!-- 背景動画 -->
     <video id="background-video" muted playsinline preload="auto">
         <source src="video/Background.mp4" type="video/mp4">
@@ -24,9 +25,7 @@
         <nav>
             <ul>
                 <li>
-                    <a href="#" class="tooltip">Works
-                        <span class="tooltiptext">Under Construction</span>
-                    </a>
+                    <a href="works.html" data-i18n="nav_works">Works</a>
                 </li>
                 <li class="lang-select">
                     <button id="lang-dropdown-btn" class="lang-dropdown-btn" aria-label="言語選択">
@@ -62,7 +61,7 @@
                     <dd data-i18n="profile_ceo_val">池和田 有輔</dd>
                     
                     <dt data-i18n="profile_founded">設立</dt>
-                    <dd data-i18n="profile_founded_val">2025年4月</dd>
+                    <dd data-i18n="profile_founded_val">2025年5月</dd>
 
                     <dt data-i18n="profile_capital">資本金</dt>
                     <dd data-i18n="profile_capital_val">1,000,000円</dd>
@@ -144,6 +143,9 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/node-polyglot/build/polyglot.min.js"></script>
-<script src="js/main.js"></script>
+    <script src="translations/common.js"></script>
+    <script src="translations/index.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
