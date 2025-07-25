@@ -338,13 +338,14 @@ button[type="submit"]:hover {
 
 /* Table Styles */
 .comparison-table {
-    border-collapse: collapse;
-    width: 100%;
+    border-collapse: collapse !important;
+    width: 100% !important;
     margin: 20px 0;
-    background-color: #fff;
+    background-color: #fff !important;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    table-layout: fixed; /* テーブルの幅を安定させる */
 }
 
 .comparison-table th,
@@ -557,18 +558,23 @@ footer {
 
 /* Works Page 2-Column Layout */
 main.works-layout {
-    display: flex;
+    display: flex !important;
     gap: 80px;
     align-items: flex-start;
     padding-left: 50px;
     padding-right: 50px;
+    margin-top: 120px; /* ヘッダー分の余白を確保 */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px;
 }
 
 .works-image-column {
-    flex: 0 0 340px; /* 固定幅340px */
+    flex: 0 0 340px !important; /* 固定幅340px */
     position: sticky;
     top: 200px; /* ヘッダー分の余白 */
     height: calc(100vh - 160px); /* 画面高さからヘッダー分を引く */
+    min-width: 340px; /* 最小幅を確保 */
 }
 
 .works-image-container {
@@ -588,8 +594,9 @@ main.works-layout {
 }
 
 .works-content-column {
-    flex: 1;
+    flex: 1 !important;
     min-width: 0; /* flexboxの幅制限を回避 */
+    width: 100%; /* 確実に幅を取る */
 }
 
 /* Texture Sample Image Styles */
@@ -611,13 +618,14 @@ main.works-layout {
 }
 
 .texture-sample-image {
-    display: block;
-    max-width: 100%;
-    height: auto;
+    display: block !important;
+    max-width: 100% !important;
+    height: auto !important;
     max-height: 400px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     cursor: pointer;
+    object-fit: contain; /* 画像の縦横比を維持 */
 }
 
 
