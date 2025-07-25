@@ -43,14 +43,14 @@ window.WORKS_TRANSLATIONS = {
         // Texture specifications
         texture_spec_title: "テクスチャの仕様",
         texture_spec_description: "本アプリにはテクスチャペイント機能がありますが、図のようなレイアウトに準拠した1024x1024ピクセルの画像を読み込むことが可能です。",
-        texture_spec_details: "読み込みはローカルフォルダあるいはカメラロールから行えます。<br>出目のデータは本アプリ内で入力してください（画像データのメタデータ領域に保存される仕様です）。<br>余白部分はダイスには反映されません。",
+        texture_spec_details: "出目のデータは本アプリ内で入力してください（画像データのメタデータ領域に保存される仕様です）。<br>余白部分はダイスには反映されません。",
         
         // Import method
         import_method_title: "テクスチャのインポート方法",
         import_method_description: "カメラロールに取り込むか、ローカルフォルダあるいはGoogleDriveやDropboxなどのクラウドストレージサービスを使ってインポートしてください。<br>いずれの方法でも、新規テクスチャ作成ボタン（プラスボタン）よりインポート可能です。",
         
         // Privacy section
-        privacy_title: "個人情報について",
+        privacy_title: "プライバシー・ポリシー",
         privacy_description: "Oui Diceは、ユーザーの個人情報やデータを一切収集、保存、共有しません。",
         privacy_personal: "ユーザーの個人情報（氏名、メールアドレス、位置情報など）は取得しません。",
         privacy_device: "端末内のデータや利用状況も収集しません。",
@@ -103,14 +103,14 @@ window.WORKS_TRANSLATIONS = {
         // Texture specifications
         texture_spec_title: "Texture Specifications",
         texture_spec_description: "This app has a texture painting function, but it's possible to load 1024x1024 pixel images that conform to the layout shown in the figure.",
-        texture_spec_details: "Loading can be done from local folders or camera roll.<br>Dice value data should be entered within this app (stored in the metadata area of the image data).<br>Margin areas are not reflected on the dice.",
+        texture_spec_details: "Dice outcome data should be entered within this app (stored in the metadata area of the image data).<br>Margin areas are not reflected on the dice.",
         
         // Import method
         import_method_title: "Texture Import Method",
         import_method_description: "Import by saving to camera roll, or using local folders or cloud storage services like Google Drive or Dropbox.<br>In any case, you can import through the new texture creation button (plus button).",
         
         // Privacy section
-        privacy_title: "About Personal Information",
+        privacy_title: "Privacy Policy",
         privacy_description: "Oui Dice does not collect, store, or share any user personal information or data.",
         privacy_personal: "We do not collect user personal information (name, email address, location information, etc.).",
         privacy_device: "We do not collect device data or usage information.",
