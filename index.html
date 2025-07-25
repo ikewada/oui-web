@@ -143,6 +143,27 @@
     </div>
 
     <script src="https://unpkg.com/node-polyglot@2.5.0/build/polyglot.min.js"></script>
+    <script>
+        // CDNフォールバック: Polyglotが読み込まれていない場合の代替CDN
+        window.addEventListener('load', function() {
+            if (typeof Polyglot === 'undefined') {
+                console.log('メインCDNからの読み込み失敗、代替CDNを試行中...');
+                const fallbackScript = document.createElement('script');
+                fallbackScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/node-polyglot/2.5.0/polyglot.min.js';
+                fallbackScript.onload = function() {
+                    console.log('代替CDNからの読み込み成功');
+                    // 多言語化システムを再初期化
+                    if (window.i18n && typeof window.i18n.init === 'function') {
+                        window.i18n.init();
+                    }
+                };
+                fallbackScript.onerror = function() {
+                    console.error('すべてのCDNからの読み込みに失敗しました');
+                };
+                document.head.appendChild(fallbackScript);
+            }
+        });
+    </script>
     <script src="translations/common.js"></script>
     <script src="translations/index.js"></script>
     <script src="js/i18n.js"></script>
