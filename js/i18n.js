@@ -80,8 +80,33 @@ function updateTexts() {
         }
     });
     
+    // Update YouTube video URL based on language
+    updatePromoVideo(currentLanguage);
+    
     adjustPrivacyLabelOrder(currentLanguage);
     return true;
+}
+
+/**
+ * YouTube動画のURLを言語に応じて更新
+ */
+function updatePromoVideo(language) {
+    const videoIframe = document.getElementById('promo-video');
+    if (!videoIframe) return;
+    
+    const pageName = getCurrentPageName();
+    const translations = getTranslations(pageName, language);
+    
+    let videoUrl;
+    if (language === 'ja') {
+        videoUrl = translations.promo_video_ja || 'https://youtu.be/fJhOI0N3p-g';
+    } else {
+        videoUrl = translations.promo_video_en || 'https://youtu.be/89FkfgzlUAw';
+    }
+    
+    // YouTube URLをembed形式に変換
+    const embedUrl = videoUrl.replace('youtu.be/', 'www.youtube.com/embed/');
+    videoIframe.src = embedUrl;
 }
 
 /**

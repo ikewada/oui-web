@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oui Dice - Oui</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css?v=1.2">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/logo-oui-blue.svg" alt="OUI">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="../works/ouidice.html" class="active">Works</a>
+                </li>
+                <li class="lang-select">
+                    <button id="lang-dropdown-btn" class="lang-dropdown-btn" aria-label="言語選択">
+                        <img src="../images/icon-language.svg" alt="Language" class="lang-icon" />
+                    </button>
+                    <ul id="lang-dropdown-list" class="lang-dropdown-list" tabindex="-1" role="listbox" aria-labelledby="lang-dropdown-btn">
+                        <li class="lang-option selected" data-lang="ja" role="option" aria-selected="true">日本語</li>
+                        <li class="lang-option" data-lang="en" role="option" aria-selected="false">English</li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="works-layout">
+        <div class="works-image-column">
+            <div class="works-image-container">
+                <img src="../images/image_ouidice_main.png" alt="Oui Dice App Screenshot" class="works-main-image">
+            </div>
+        </div>
+        
+        <div class="works-content-column">
+            <section class="works-hero" id="works">
+                <div class="works-content">
+                    <h2 data-i18n="app_name">Oui Dice</h2>
+                    <p data-i18n="app_description">リアルな3Dで、自由なダイス体験を。<br>
+                    Oui Diceは、カードゲーム、ボードゲーム、TRPGに最適な多機能＆洗練されたダイスアプリです。基本無料で広告なし。お子様でも安心して快適に使えます。</p>
+                </div>
+            </section>
+
+            <section class="promo-video">
+                <div class="works-content">
+                    <div class="video-container">
+                        <iframe 
+                            id="promo-video"
+                            width="800" 
+                            height="450" 
+                            src="https://www.youtube.com/embed/fJhOI0N3p-g?controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&fs=0" 
+                            title="Oui Dice Promotional Video" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features">
+                <h3 data-i18n="features_title">主な機能</h3>
+                <div class="works-content">
+                    <div class="features-list">
+                        <ul>
+                            <li data-i18n="feature_graphics">リアルな3Dグラフィック</li>
+                            <li data-i18n="feature_variety">多彩な形状・質感・デザインのダイス</li>
+                            <li data-i18n="feature_paint">ダイスに絵を描けるペイント機能（立方体のみ）</li>
+                            <li data-i18n="feature_import">写真からオリジナルダイスを作成！</li>
+                            <li data-i18n="feature_share">作ったダイスをSNSにシェア</li>
+                            <li data-i18n="feature_orientation">縦持ち・横持ちどちらでも快適に使える</li>
+                            <li data-i18n="feature_wallpaper">豊富で美麗な壁紙カスタマイズ</li>
+                            <li data-i18n="feature_intuitive">サクサク動く直感的な操作</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="texture-creation">
+                <h3 data-i18n="texture_creation_title">テクスチャ作成</h3>
+                <div class="works-content">
+                    <p data-i18n="texture_creation_description">テクスチャペイントは、OuiDiceが誇る独自のカスタマイズ機能です。<br>
+                    専用の展開図に沿ってテクスチャを描き、出目（サイコロの数字）を入力するだけで、誰でも簡単に自分だけの立方体ダイスを作成できます。作成画面は横向き表示のみに対応しており、直感的な編集操作が可能です。</p>
+                    
+                    <div class="screenshot">
+                        <img src="../images/dice-screen-1.png" alt="テクスチャ作成画面" class="screenshot-image">
+                    </div>
+
+                    <p data-i18n="texture_creation_premium">さらに、プレミアム版にアップグレードすると、外部からのテクスチャインポートが可能になります。<br>
+                    カメラロールやローカルフォルダはもちろん、Google Driveなどのクラウドストレージからも画像を読み込むことができます。対応形式は PNG / JPEG / HEIF などです。</p>
+
+                    <div class="screenshot">
+                        <img src="../images/dice-screen-2.png" alt="テクスチャ作成画面" class="screenshot-image">
+                        <p class="image-caption" data-i18n="texture_import_caption">こちらのプラスボタンよりテクスチャをインポートできます。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="texture-format">
+                <h3 data-i18n="texture_format_title">テクスチャのフォーマット</h3>
+                <div class="works-content">
+                    <p data-i18n="texture_creation_spec">グラフィックアプリなどでテクスチャを作成される場合は、1024×1024ピクセルのPNG形式を推奨しています。以下のような展開図のレイアウトに準拠したデザインであれば、リサイズなしでスムーズな読み込みが可能です。<br>
+                    ※余白部分に描かれた内容はダイスの面には反映されません。</p>
+                    
+                    <div class="texture-sample">
+                        <a href="../images/dice-texture-sample.png" target="_blank" rel="noopener noreferrer">
+                            <img src="../images/dice-texture-sample.png" alt="ダイステクスチャサンプル" class="texture-sample-image">
+                        </a>
+                    </div>
+
+                    <p data-i18n="texture_creation_sample">以下はテクスチャのサンプルです。<br>
+                    出目のデータも含まれており、ダウンロードしたものをOuiDiceに読み込むことで、今日のランチを決めるためのダイスをお使い頂けます。</p>
+                    
+                    <div class="texture-sample">
+                        <a href="../images/dice-texture-lunch.png" target="_blank" rel="noopener noreferrer">
+                            <img src="../images/dice-texture-lunch.png" alt="ランチダイステクスチャサンプル" class="texture-sample-image">
+                        </a>
+                        <p class="image-caption" data-i18n="lunch_dice_caption">今日のランチを決めるダイス</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="premium">
+                <h3 data-i18n="premium_title">さらに広がるプレミアム体験</h3>
+                <div class="works-content">
+                    <p data-i18n="premium_description">プレミアムにアップグレードすることで、美しいマテリアル、多面体ダイス、カスタム画像によるダイス作成など、自由度が飛躍的に広がります。</p>
+                    
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th data-i18n="table_feature">機能</th>
+                                <th data-i18n="table_free">無料版</th>
+                                <th data-i18n="table_premium">プレミア版</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="feature-label" data-i18n="feature_shapes">形状</td>
+                                <td class="free-version" data-i18n="shapes_free">立方体（D6）のみ</td>
+                                <td class="premium-version" data-i18n="shapes_premium">D4、D6、D8、D10、D12、D20</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-label" data-i18n="feature_materials">マテリアル</td>
+                                <td class="free-version" data-i18n="materials_free">2種類</td>
+                                <td class="premium-version" data-i18n="materials_premium">7種類</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-label" data-i18n="feature_image_import">画像インポート</td>
+                                <td class="free-version" data-i18n="import_free">不可</td>
+                                <td class="premium-version" data-i18n="import_premium">可能</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-label" data-i18n="feature_texture_slots">テクスチャ保存スロット</td>
+                                <td class="free-version" data-i18n="slots_free">1つのみ</td>
+                                <td class="premium-version" data-i18n="slots_premium">上限なし</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="privacy">
+                <h3 data-i18n="privacy_title">プライバシー・ポリシー</h3>
+                <div class="works-content">
+                    <p data-i18n="privacy_description">Oui Diceは、ユーザーの個人情報やデータを一切収集、保存、共有しません。</p>
+                    <div class="features-list">
+                        <ul>
+                            <li data-i18n="privacy_personal">ユーザーの個人情報（氏名、メールアドレス、位置情報など）は取得しません。</li>
+                            <li data-i18n="privacy_device">端末内のデータや利用状況も収集しません。</li>
+                            <li data-i18n="privacy_sharing">第三者と情報を共有することもありません。</li>
+                        </ul>
+                    </div>
+                    <br>
+                    <p><span data-i18n="contact_description_prefix">ご不明な点がございましたら、</span><a href="../index.html#contact" data-i18n="contact_link_text">こちら</a><span data-i18n="contact_description_suffix">からお問い合わせください。</span></p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer-copyright">
+        © 2025 Oui LLC. All rights reserved.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/node-polyglot/build/polyglot.min.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            if (typeof Polyglot === 'undefined') {
+                console.log('Fallback CDN loading...');
+                const fallbackScript = document.createElement('script');
+                fallbackScript.src = 'https://cdn.jsdelivr.net/npm/node-polyglot/build/polyglot.min.js';
+                fallbackScript.onload = () => window.i18n?.init?.();
+                document.head.appendChild(fallbackScript);
+            }
+        });
+    </script>
+    <script src="../translations/common.js"></script>
+    <script src="../translations/ouidice.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html> 

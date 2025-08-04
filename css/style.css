@@ -9,7 +9,7 @@
 
 body {
     font-family: sans-serif;
-    line-height: 2.0;
+    line-height: 1.8;
     letter-spacing: 0.05em;
     color: #333;
     background-color: #edecea;
@@ -205,7 +205,6 @@ section h3 {
     font-weight: 600;
     font-family: 'Barlow', sans-serif;
     color: #333;
-    margin-bottom: 0;
 }
 
 section > div {
@@ -329,9 +328,7 @@ button[type="submit"]:hover {
     width: 100%;
     margin: 20px 0;
     background-color: #fff;
-    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     table-layout: fixed;
 }
 
@@ -439,7 +436,6 @@ main a:hover::before {
 .texture-sample a {
     display: inline-block;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border-radius: 8px;
     overflow: hidden;
 }
 
@@ -453,10 +449,25 @@ main a:hover::before {
     max-width: 100%;
     height: auto;
     max-height: 400px;
-    border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     cursor: pointer;
     object-fit: contain;
+}
+
+.screenshot {
+    margin: 30px 0 30px 0;
+    text-align: center;
+}
+
+.screenshot-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    object-fit: contain;
+    border-radius: 40px;
+    margin: 0 auto;
 }
 
 /* ==========================================================================
@@ -613,4 +624,37 @@ main a:hover::before {
     .modal-body h4 {
         font-size: 16px;
     }
+    
+    /* Video container styles */
+    .video-container {
+        max-width: 100%;
+    }
+    
+    .video-container iframe {
+        height: 250px;
+    }
+}
+
+/* Video container styles */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+}
+
+/* Image caption styles */
+.image-caption {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-top: 8px;
+    font-weight: 300;
 }
