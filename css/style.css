@@ -83,7 +83,6 @@ main.works-layout {
     flex: 0 0 340px;
     position: sticky;
     top: 200px;
-    height: calc(100vh - 160px);
     min-width: 340px;
 }
 
@@ -96,7 +95,7 @@ main.works-layout {
     overflow: hidden;
 }
 
-.works-main-image {
+.works-main-icon {
     width: 100%;
     height: 100%;
     object-fit: contain;
