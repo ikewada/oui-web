@@ -424,6 +424,17 @@ main a:hover::before {
     transform: scaleX(1);
 }
 
+/* Disable underline effect for image links (e.g., badges, image thumbnails) */
+main a:has(img),
+.store-badges a {
+    text-decoration: none;
+}
+
+main a:has(img)::before,
+.store-badges a::before {
+    content: none;
+}
+
 /* ==========================================================================
    Image Components
    ========================================================================== */
@@ -467,6 +478,21 @@ main a:hover::before {
     object-fit: contain;
     border-radius: 40px;
     margin: 0 auto;
+}
+
+/* Store badges */
+.store-badges {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+}
+
+.store-badges img {
+    height: 40px;
+    width: auto;
+    display: block;
 }
 
 /* ==========================================================================
